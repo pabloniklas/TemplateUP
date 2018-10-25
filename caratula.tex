@@ -1,0 +1,120 @@
+%
+% TP de Tecnologias de la Informacion
+%
+% Pablo Niklas
+%
+%
+
+%\documentclass[10pt,a4paper,oneside]{book}
+\documentclass[a4paper,10pt,oneside]{article}
+
+% Carga de paquetes
+\usepackage[width = 18cm, height = 22cm, columnsep = 1cm]{geometry}
+\usepackage{wrapfig}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[bitstream-charter]{mathdesign}
+\usepackage{palatino}
+\usepackage[spanish]{babel}
+\usepackage{fancyhdr, graphicx}
+\usepackage{enumitem}
+\usepackage{gnuplottex} %Incorporo GNUPLOT
+\usepackage[bottom]{footmisc} 		% Fix footnote http://www.latex-community.org/forum/viewtopic.php?f=5&t=5001
+\usepackage[spanish]{varioref} 		% referencias
+\usepackage{cancel} 
+\usepackage{pgf}
+\usepackage{pgfpages}
+
+%\usepackage{amsmath, mathtools}
+%\usepackage{amssymb}
+
+
+% Seteos
+\renewcommand{\shorthandsspanish}{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+%\renewcommand{\familydefault}{\sfdefault}
+\renewcommand\thesubsection{\alph{subsection}}
+\setlength{\parindent}{0pt}
+
+\input{config}
+
+% Cabecera de pagina
+\setlength{\headheight}{26pt}
+\fancyhead[R]{
+\small{\titulo - \materia\\
+Facultad de Ingenier\'ia}
+}
+\fancyhead[L]{
+\includegraphics[width=0.8cm]{up.png}
+}
+\fancyfoot[C]{} % En esta pagina no hay numero de paginas.
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{fancy}
+
+\title{\titulo}
+\author{Autor: \autor\\Docente: \docente}
+\date{} %No quiero la fecha.
+
+\pdfinfo{%
+  /Title    (Universidad de Palermo - \materia)
+  /Author   (\autor)
+  /Creator  (\autor)
+  /Producer (\autor)
+  /Subject  (\titulo)
+}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.85\pgfphysicalwidth,%
+    resized height=.85\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+\begin{document}
+\huge
+\begin{center}
+\textbf{Trabajo Pr\'actico}\\
+\textbf{\materia}\\
+\end{center}
+\bigskip
+\bigskip
+
+\Large
+\textbf{Apellidos:} Niklas \\
+\textbf{Nombres:} Pablo Sebastian Ramon\\
+\textbf{Legajo:} 81050\\
+\textbf{Tel\'efono:} 15.6568.5694\\
+\textbf{eMail:} pablo.niklas@gmail.com\\
+\textbf{Carrera:} Lic. en Tecnolog\'ias de la Informaci\'on\\
+
+%\bigskip
+%\textbf{Apellidos:} Ferreira \\
+%\textbf{Nombres:} Liza\\
+%\textbf{Legajo:} 80890\\
+%\textbf{Tel\'efono:} 15.6642.3757\\
+%\textbf{eMail:} lizitaferreira@gmail.com\\
+%\textbf{Carrera:} Ing. Industrial\\
+
+\bigskip
+\textbf{Turno:} \turno\\
+\textbf{Docente:} \docente\\
+
+\bigskip
+\textbf{Fecha de Entrega:} \entrega
+\normalsize
+
+\end{document}

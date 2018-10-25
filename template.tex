@@ -1,0 +1,147 @@
+%=================================================
+% Template
+%
+% Pablo Niklas
+%=================================================
+
+% Buenas practicas en http://stackoverflow.com/questions/193298/best-practices-in-latex
+
+%\documentclass[10pt,a4paper,oneside]{book}
+\documentclass[a4paper,10pt,oneside]{article}
+
+% Carga de paquetes
+\usepackage[width = 18cm, height = 22cm, columnsep = 1cm]{geometry}
+\usepackage{wrapfig}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%===================================================
+% Fuentes
+%===================================================
+%\usepackage[bitstream-charter]{mathdesign}
+\usepackage{palatino}
+%\usepackage{lmodern}
+%===================================================
+
+
+%===================================================
+\usepackage[spanish]{babel}
+\usepackage{fancyhdr, graphicx}
+\usepackage{enumitem}
+\usepackage{gnuplottex} %Incorporo GNUPLOT
+\usepackage[bottom]{footmisc} % Fix footnote http://www.latex-community.org/forum/viewtopic.php?f=5&t=5001
+\usepackage[spanish]{varioref} % referencias
+\usepackage{cancel} 
+\usepackage{pgf}
+\usepackage{pgfpages}
+\usepackage{hyperref}	% urls
+\usepackage{upgreek}	% Letra mu.
+\usepackage{cite}	% para bibtex
+\usepackage{fontspec}
+\setsansfont{Roboto Condensed}
+\setfont{Crimson}
+
+%\usepackage{amsmath, mathtools}
+%\usepackage{amssymb}
+%===================================================
+
+%===================================================
+% Seteos
+%===================================================
+\renewcommand{\shorthandsspanish}{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+%\renewcommand{\familydefault}{\sfdefault}
+%\numberwithin{equation}{section}
+%\renewcommand{\theenumi}{\alph{enumi}}
+%\renewcommand\thesubsection{\alph{subsection}}
+\setlength{\parindent}{0pt}
+\parindent=20pt      % Sangria francesa - http://ocw.um.es/gat/contenidos/ldaniel/ipu_docs/latex/tema4.html
+%===================================================
+
+%===================================================
+%%% Variables de autor/materia/etc...
+\input{config}
+%===================================================
+
+%===================================================
+% Cabecera de pagina
+%===================================================
+\setlength{\headheight}{26pt}
+\fancyhead[R]{\small{\titulo \ - \materia\\Facultad de Ingenier\'ia}} %el "\ " es para que quede un espacio.
+\fancyhead[L]{
+\includegraphics[width=0.8cm]{up.png}
+}
+\pagestyle{fancy}
+
+\title{\titulo}
+\author{Autor: \autor\\Docente: \docente}
+\date{} %No quiero la fecha.
+%===================================================
+
+%===================================================
+\pdfinfo{%
+  /Title    (Universidad de Palermo - \materia)
+  /Author   (\autor)
+  /Creator  (\autor)
+  /Producer (\autor)
+  /Subject  (\titulo)
+}
+%===================================================
+
+%===================================================
+% http://rinconmatematico.com/instructivolatex/formulas.htm
+% http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Math
+% http://texblog.org/2011/01/27/add-your-logo-to-the-title-page/
+%===================================================
+
+\begin{document}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.85\pgfphysicalwidth,%
+    resized height=.85\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\maketitle
+\thispagestyle{fancy}
+% \tableofcontents
+
+\section{Secci\'on}
+Hola a todos ~\cite{0068780}.
+
+\bibliography{bibliografia}{}
+\bibliographystyle{plain}
+
+% 
+% \begin{thebibliography}{99}
+% \bibitem{Erdos01} P. Erd\H os, \emph{A selection of problems and
+% results in combinatorics}, Recent trends in combinatorics (Matrahaza,
+% 1995), Cambridge Univ. Press, Cambridge, 2001, pp. 1--6.
+% 
+% \bibitem{ConcreteMath}
+% R.L. Graham, D.E. Knuth, and O. Patashnik, \emph{Concrete
+% mathematics}, Addison-Wesley, Reading, MA, 1989.
+% 
+% \bibitem{Knuth92} D.E. Knuth, \emph{Two notes on notation}, Amer.
+% Math. Monthly \textbf{99} (1992), 403--422.
+% 
+% \bibitem{Simpson} H. Simpson, \emph{Proof of the Riemann
+% Hypothesis},  preprint (2003), available at 
+% \url{http://www.math.drofnats.edu/riemann.ps}.
+% \end{thebibliography}
+
+\end{document}
