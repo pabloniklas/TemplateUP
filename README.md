@@ -1,2 +1,3 @@
 # TemplateUP.latex
-Template para los TPs
+
+Archivos templates para los TP de la facu.
